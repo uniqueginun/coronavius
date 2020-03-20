@@ -5,6 +5,8 @@ import { fetchConts, fetchStats } from "../store/actions/CoronaActions";
 import { Text, Overlay, Badge } from "react-native-elements";
 
 import SearchableDropdown from "react-native-searchable-dropdown";
+import Colors from "../Colors";
+import AppHeader from "../components/AppHeader";
 
 export default function StatisticScreen(props) {
   const countries = useSelector(state => state.virus.countries);
@@ -49,6 +51,7 @@ export default function StatisticScreen(props) {
       source={require("../assets/img/coronavirus.jpg")}
       style={styles.container}
     >
+      <AppHeader title="إحصائيات البلدان" />
       {loading ? (
         <Image
           source={require("../assets/img/loading.gif")}
@@ -87,7 +90,7 @@ export default function StatisticScreen(props) {
                     color: "#000",
                     backgroundColor: "#fff"
                   },
-                  placeholder: "الرجاء إختيار المنطقة"
+                  placeholder: "الرجاء إختيار البلد:// ex: Sudan"
                 }}
                 listProps={{
                   nestedScrollEnabled: true
@@ -98,7 +101,7 @@ export default function StatisticScreen(props) {
           <Overlay
             isVisible={visible}
             windowBackgroundColor="rgba(255, 255, 255, .5)"
-            overlayBackgroundColor="#591212"
+            overlayBackgroundColor={Colors.primary}
             width="90%"
             height="auto"
             overlayStyle={styles.overlap}
@@ -168,7 +171,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: null,
     height: null,
-    paddingTop: "15%",
     alignItems: "center"
   },
   overlap: {

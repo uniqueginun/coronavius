@@ -10,21 +10,7 @@ import {
 } from "react-native-elements";
 import { connect } from "react-redux";
 import { fetchDialy } from "../store/actions/CoronaActions";
-
-const users = [
-  {
-    name: "brynn1",
-    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg"
-  },
-  {
-    name: "brynn2",
-    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg"
-  },
-  {
-    name: "brynn3",
-    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg"
-  }
-];
+import AppHeader from "../components/AppHeader";
 
 class ReportScreen extends Component {
   constructor(props) {
@@ -42,26 +28,12 @@ class ReportScreen extends Component {
     }
 
     this.setState({ loading: false });
-
-    console.log(this.props);
   }
 
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <Header
-          centerComponent={{
-            text: "إحصائيات بالتواريخ",
-            style: { color: "#fff", fontWeight: "bold" }
-          }}
-          containerStyle={{
-            backgroundColor: "#d86422",
-            justifyContent: "center",
-            height: 90,
-            paddingBottom: 20,
-            marginBottom: 15
-          }}
-        />
+        <AppHeader title="إحصائيات بالتواريخ" />
         <ScrollView>
           {this.state.loading ? (
             <View style={{ justifyContent: "center", alignItems: "center" }}>

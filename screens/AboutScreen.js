@@ -1,24 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import { Header } from "react-native-elements";
 import { ScrollView } from "react-native-gesture-handler";
+import AppHeader from "../components/AppHeader";
 
 const AboutScreen = () => {
   return (
     <View style={styles.container}>
-      <Header
-        centerComponent={{
-          text: "كوفيد- 19",
-          style: { color: "#fff", fontWeight: "bold" }
-        }}
-        containerStyle={{
-          backgroundColor: "#d86422",
-          justifyContent: "center",
-          height: 90,
-          paddingBottom: 20,
-          marginBottom: 15
-        }}
-      />
+      <AppHeader title="عن الفايروس" />
       <ScrollView>
         <View style={styles.imgContainer}>
           <Image

@@ -1,25 +1,13 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import Unorderedlist from "react-native-unordered-list";
-import { Header } from "react-native-elements";
+import AppHeader from "../components/AppHeader";
 
 export default class InstructionScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header
-          centerComponent={{
-            text: "أسئلة وأجوبة حول فيروس كورونا",
-            style: { color: "#fff", fontWeight: "bold" }
-          }}
-          containerStyle={{
-            backgroundColor: "#d86422",
-            justifyContent: "center",
-            height: 90,
-            paddingBottom: 20,
-            marginBottom: 15
-          }}
-        />
+        <AppHeader title="أسئلة وأجوبة حول فيروس كورونا" />
         <ScrollView>
           <View style={styles.block}>
             <View style={styles.questionContainer}>
